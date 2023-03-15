@@ -9,8 +9,6 @@ export const CartContextProvider = ({children}) => {
 
 
     const [cart, setCart] = useState([]);
-
-    
     
 
 

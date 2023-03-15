@@ -8,9 +8,8 @@ const ItemList = ({data }) => {
   return (
     <>
 
-    <div style={{minHeight:"80vh",width:"100%", display:"flex",justifyContent:"center",alignItems:"center"}}>
-
-      <div classNameName="center-div" style={{ marginTop:"100px",display:"flex",flexWrap:"wrap",justifyContent:"center",alignItems:"center",maxWidth:"1200px", gap:"10px" }}>
+    <div className='min-h-[80vh] w-full flex justify-center items-center'>
+      <div className="center-div mt-[100px] flex flex-wrap justify-center items-center max-w-[1200px] gap-3" >
       {data.map((prod)=>(
 
             <Item 
