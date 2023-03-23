@@ -58,7 +58,13 @@ const ItemListContainer = () => {
   }else{
     return(
 
-    <div className='bg-gray-200'>
+    <div className='bg-gray-200 flex flex-col justify-center items-center'>
+
+      <div className='max-w-[1000px] w-full '>
+
+      <h2 className='mt-[100px] text-left text-[35px] pl-[30px]  bg-gradient-to-r from-[#4EA4CD]  to-[#9FF9FF] bg-clip-text text-transparent '>Catálogo</h2>
+      </div>
+
 
       {categoria ? <ItemList data={categoryFilter} /> : <ItemList data={data} />}
       

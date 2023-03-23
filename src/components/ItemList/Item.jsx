@@ -13,13 +13,13 @@ const Item = ({ id, nombre, precio, categoria, imagen }) => {
 
               <img srcSet={imagen} className='h-[180px] w-[200px] m-auto '  alt="..." />
               <div className="card-body">
-                <h5 className=" text-[20px] font-semibold ">{nombre}</h5>
+                <h5 className=" text-[20px] font-thin ">{nombre}</h5>
                 
               </div>
               </Link>
               <ul className=" flex justify-center gap-3 border-t-[2px] ">
               <li className=" text-gray-400 pt-3">{categoria}</li>
-              <li className="pt-3 font-semibold">${precio}</li>
+              <li className="pt-3 font-thin">${precio}</li>
                 
               </ul>
               <div className="card-body">

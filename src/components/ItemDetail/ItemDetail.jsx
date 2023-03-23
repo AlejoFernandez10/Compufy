@@ -69,7 +69,7 @@ const ItemDetail = ({ prods }) => {
              <div className="mt-8 flex justify-between">
                <div className="max-w-[35ch] space-y-2">
                  <h1 className="text-xl font-bold sm:text-1xl">
-                   {prod.nombre}
+                  {prod.nombre}
                  </h1>
      
                  <p className="text-sm">Highest Rated Product</p>
@@ -132,7 +132,7 @@ const ItemDetail = ({ prods }) => {
                  </div>
                </div>
      
-               <p className="text-lg font-bold text-[#0CC0DF] ">${prod.precio}</p>
+               <p className="text-lg font-bold text-[#0CC0DF] ">${prod.precio} c/u</p>
              </div>
      
              <div className="mt-4">
@@ -156,6 +156,7 @@ const ItemDetail = ({ prods }) => {
                       nombre={prod.nombre}
                       imagen={prod.imagen}
                       precio={prod.precio}
+                      categoria={prod.categoria}
 
                       />
 

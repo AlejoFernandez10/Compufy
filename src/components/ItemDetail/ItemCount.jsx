@@ -9,17 +9,21 @@ import { CartContext } from '../../context/CartContextProvider';
 
 
 
-const ItemCount = ({id, imagen ,nombre,  precio}) => {
+const ItemCount = ({id, imagen ,nombre,  precio , categoria}) => {
 
   
 
-    const [cart, setCart] = useContext(CartContext)
+    const [cart, setCart] = useContext(CartContext);
+
+    
 
     const [count,setCount] = useState(1);  
     
 
     const sumarCant = ()=>{
-      setCount(count + 1)
+      if(count < 5){
+        setCount(count + 1)
+      }
     }
     const restarCant = ()=>{
       if(count === 0){
@@ -49,7 +53,7 @@ const ItemCount = ({id, imagen ,nombre,  precio}) => {
           });
         
         }else{
-          return [...currentItems, {id, cantidad: count, precio, imagen ,nombre }]
+          return [...currentItems, {id, cantidad: count, precio , imagen ,nombre, categoria }]
         }
       })
      
@@ -60,7 +64,7 @@ const ItemCount = ({id, imagen ,nombre,  precio}) => {
   
   return (
     <div  className='mt-[4px] flex h-full w-full justify-center items-center'>
-      <div className='w-[120px] h-[30px] mb-[10px] bg-[#eee] flex justify-evenly items-center rounded-[10px] ml-[15px] mr-[15px]'>
+      <div className='w-[120px] h-[40px]  bg-[#eee] flex justify-evenly items-center rounded-[10px] ml-[15px] mr-[15px]'>
         <span className='pl-[15px] pr-[15px] cursor-pointer 'onClick={restarCant}>-</span>
         <span>{count}</span>
         <span className='pl-[15px] pr-[15px] cursor-pointer 'onClick={sumarCant}>+</span>
@@ -69,8 +73,8 @@ const ItemCount = ({id, imagen ,nombre,  precio}) => {
 
       <a>
 
-          <div onClick={() => addToCart()}  className="block text-[14px] rounded-[10px] cursor-pointer  border-[1px] border-[#444] px-5 py-3 text-xs font-medium text-[#444] transition duration-200 hover:bg-[#0CC0DF] hover:border-[#0CC0DF] hover:text-white">
-              Añadir
+          <div onClick={() => addToCart()  }  className="block text-[14px] rounded-[10px] cursor-pointer  border-[1px] border-[#444] px-5 py-[11px] text-xs font-medium text-[#444] transition duration-200 hover:bg-[#0CC0DF] hover:border-[#0CC0DF] hover:text-white">
+              Añadir 
           </div>
 
       </a>
