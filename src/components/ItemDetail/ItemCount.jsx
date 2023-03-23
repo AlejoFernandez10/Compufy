@@ -1,10 +1,17 @@
 import React from 'react'
 import { useContext,useState } from 'react'
-import { CartContext } from '../context/CartContextProvider';
+import { CartContext } from '../../context/CartContextProvider';
 
-import { Link } from 'react-router-dom';
 
-const ItemCount = ({id, img ,title,  price}) => {
+
+
+
+
+
+
+const ItemCount = ({id, imagen ,nombre,  precio}) => {
+
+  
 
     const [cart, setCart] = useContext(CartContext)
 
@@ -23,13 +30,16 @@ const ItemCount = ({id, img ,title,  price}) => {
       
     }
 
-    const addToCart = ()=>{
-      setCart((currentItems)=>{
-        const isItem = currentItems.find((item) => item.id === id)
 
-        if(isItem){
+    const addToCart = ()=>{
+
+      setCart((currentItems)=>{
+        const itemExists = currentItems.find( (item) => item.id === id)
+
+        if(itemExists){
           return currentItems.map((item)=>{
-            if(item.id === id ){
+
+            if(item.id === id ) {
               return {...item, cantidad: item.cantidad + count}
             }
             else{
@@ -39,11 +49,12 @@ const ItemCount = ({id, img ,title,  price}) => {
           });
         
         }else{
-          return [...currentItems, {id, cantidad: count, price, img ,title }]
+          return [...currentItems, {id, cantidad: count, precio, imagen ,nombre }]
         }
       })
      
-    }
+    }    
+    
 
 
   
@@ -58,7 +69,7 @@ const ItemCount = ({id, img ,title,  price}) => {
 
       <a>
 
-          <div onClick={() => addToCart()} className="block text-[14px] rounded-[10px] cursor-pointer  border-[1px] border-[#444] px-5 py-3 text-xs font-medium text-[#444] transition duration-200 hover:bg-[#0CC0DF] hover:border-[#0CC0DF] hover:text-white">
+          <div onClick={() => addToCart()}  className="block text-[14px] rounded-[10px] cursor-pointer  border-[1px] border-[#444] px-5 py-3 text-xs font-medium text-[#444] transition duration-200 hover:bg-[#0CC0DF] hover:border-[#0CC0DF] hover:text-white">
               Añadir
           </div>
 

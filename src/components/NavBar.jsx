@@ -1,30 +1,31 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import '../styles/NavBar.css'
-import CartWidget from './CartWidget'
+import CartWidget from './cartComponents/CartWidget'
 
 
 const NavBar = () => {
+  
   return (
     <>
-    <nav className='nav' style={{height:"70px"}}> 
+    <nav className='nav h-[70px] ' > 
     <div className="nav-section ">
 
-      <p className="logo" style={{padding:"0",marginTop:"10px"}}><Link to={"/"} style={{textDecoration:"none",padding:"0"}}><span style={{fontSize: "35px",color:"#0CC0DF",fontWeight:"600",alignSelf:"flex-start"}} >Compufy</span></Link></p>
+      <p className="logo p-0 mt-[10px] " ><Link to={"/"} className="p-0" style={{textDecoration:"none"}}><span className='text-[35px] text-[#0CC0DF]  font-sebmibold self-start' >Compufy</span></Link></p>
 
     </div>
-    <div className="nav-section" style={{display:"flex",marginTop:"10px"}}>
+    <div className="nav-section flex mt-[10px] " >
 
-      <Link to={`/catalogo`} style={{marginTop:"8px",textDecoration:"none"}} className='text-dark fs-5'>Catalogo</Link>
+      <Link to={`/catalogo`} style={{textDecoration:"none"}}  className='text-black text-[21px] mt-[12px]  '>Catalogo</Link>
       <div className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle text-dark fs-5" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a className="nav-link dropdown-toggle text-black text-[20px] mt-[5px] " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Categorias
           </a>
           <ul className="dropdown-menu ">
-            <li><Link to={`/categoria/${`Procesador`}`} className="dropdown-item ">Procesadores</Link></li>
-            <li><Link to={`/categoria/${`Motherboard`}`} className="dropdown-item ">Motherboards</Link></li>
+            <li><Link to={`/categoria/${`procesador`}`} className="dropdown-item hover:text-[#0CC0DF] ">Procesadores</Link></li>
+            <li><Link to={`/categoria/${`motherboard`}`} className="dropdown-item hover:text-[#0CC0DF] ">Motherboards</Link></li>
             
-            <li><Link to={`/categoria/${`Ram`}`} className="dropdown-item ">Memoria Ram</Link></li>
+            <li><Link to={`/categoria/${`ram`}`} className="dropdown-item hover:text-[#0CC0DF] ">Memoria Ram</Link></li>
           </ul>
         </div>
 

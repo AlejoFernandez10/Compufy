@@ -6,7 +6,7 @@ const Bienvenidos = () => {
   return (
     <>
     <div className='bienvenidos-container'>
-    <h1 style={{marginTop:"300px", color:"#0CC0DF", fontSize:"50px"}}>Bienvenidos a Compufy</h1>        
+    <h1 className='mt-[300px] text-[#0CC0DF] text-[54px] font-semibold' >Bienvenidos a Compufy! </h1>        
     </div>
     </>
   )
