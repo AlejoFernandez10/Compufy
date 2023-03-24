@@ -19,7 +19,7 @@ const Document = () => {
             if(snapshot.exists()){
                 const docs = snapshot.data();
                 setProduct(docs)
-                console.log(docs)
+                
             }
         })
 

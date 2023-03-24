@@ -9,7 +9,7 @@ const Checkoutdetail = () => {
     const [cart,setCart] = useContext(CartContext)
 
   return (
-    <div className='min-h-[200px] w-full flex flex-col  items-center mt-16' >
+    <div className='min-h-[20vh] w-full flex flex-col  items-center mt-16' >
 
         <h3 className='text-[23px] text-left mb-[30px] '>Mi Compra: </h3>
 
@@ -33,6 +33,7 @@ const Checkoutdetail = () => {
 
 
         </div>
+        <span id='detalleCompra'></span>
 
     </div>
   )

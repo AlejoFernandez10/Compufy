@@ -40,7 +40,7 @@ const Cart = () => {
 
     if(cart.length === 0){
       return(
-        <div className='min-h-[100vh] w-full flex justify-center items-start '>
+        <div className='min-h-[150vh] w-full flex justify-center items-start '>
         <div className='min-h-[40vh] min-w-[1000px] mt-20 rounded-[7px] max-w-[1001px] bg-gray-100 '>
           <h2 className=' mb-[100px] mt-[100px] text-[30px]'>El carrito está vacío...</h2>
           

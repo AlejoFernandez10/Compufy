@@ -10,8 +10,8 @@ const CartWidget = () => {
 
   const [cart, setCart] = useContext(CartContext);
 
-  const cantidad = cart.reduce((acc, curr) => {
-    return acc + curr.cantidad;
+  const cantidad = cart.reduce((acumulador, actual) => {
+    return acumulador + actual.cantidad;
   }, 0);
 
 

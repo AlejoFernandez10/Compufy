@@ -25,7 +25,9 @@ const CartForm = () => {
       MySwal.fire({
         title: <strong>Compra realizada!</strong>,
         html: <i>Puede seguir la compra con el id generado </i>,
-        icon: 'success'
+        icon: 'success',
+        confirmButtonText:'<a href="#detalleCompra">Ver mi compra</a>'
+        
       })
     }
 
@@ -72,7 +74,9 @@ const CartForm = () => {
         <input type="email" placeholder='Ingrese su email' className='bg-gray-200 rounded-[6px] text-gray-700 min-h-[40px] min-w-[300px] mt-[20px] pl-2' required onChange={(e)=>setEmail(e.target.value)}/>
         <input type="number" placeholder='Número de teléfono' className='bg-gray-200 rounded-[6px] text-gray-700 min-h-[40px] min-w-[300px] mt-[20px] pl-2' required onChange={(e)=>setNumber(e.target.value)}/>
         
-        <button type="submit" className='mt-[40px] mb-4 p-2 bg-[#0CC0DF] rounded-[6px] text-gray-200 scale-100 transition duration-200 hover:scale-105 ' onClick={()=> setProds(cart) & compraExitosa()} >Finalizar compra </button> 
+      
+          <button type="submit" className='mt-[40px] mb-4 p-2 bg-[#0CC0DF] rounded-[6px] text-gray-200 scale-100 transition duration-200 hover:scale-105 ' onClick={()=> setProds(cart) & compraExitosa()} >Finalizar compra </button> 
+      
         
         </form> 
 
