@@ -62,7 +62,7 @@ const ItemListContainer = () => {
 
       <div className='max-w-[1000px] w-full '>
 
-      <h2 className='mt-[100px] text-left text-[35px] pl-[30px]  bg-gradient-to-r from-[#4EA4CD]  to-[#9FF9FF] bg-clip-text text-transparent '>Catálogo</h2>
+      <h2 className='mt-[100px] text-center text-[35px] pl-[30px]  bg-gradient-to-r from-[#13668d]  to-[#0befff] bg-clip-text text-transparent '>Catálogo</h2>
       </div>
 
 

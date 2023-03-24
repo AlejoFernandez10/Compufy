@@ -3,13 +3,29 @@ import { CartContext } from '../../context/CartContextProvider';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import CartForm from './CartForm';
+import withReactContent from 'sweetalert2-react-content';
+import swal from 'sweetalert2/dist/sweetalert2.all.min.js'
+
+
+const MySwal = withReactContent(swal)
+
 
 const Cart = () => {
-
+  
+  
   const [cart, setCart] = useContext(CartContext)
 
-
-
+  
+  //Alerta cuando se vacia el carrito
+  const carritoVaciado= ()=>{
+    MySwal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Carrito vaciado correctamente',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
 
   //SUMAR PRECIO TOTAL
   let precioTotal = 0;
@@ -35,14 +51,15 @@ const Cart = () => {
         </div>
         </div>
       )
-    }                // SI EL CARRITO TIENE ITEMS
-    else{
+    }                
+    else{               
+                    // SI EL CARRITO TIENE ITEMS...
+      
       return(
 
+             
         
-        
-        
-<section>
+<section className='min-h-[150vh] '>
   <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
     <div className="mx-auto max-w-3xl">
       <header className="text-center">
@@ -62,12 +79,12 @@ const Cart = () => {
                 />
 
                 <div>
-                  <h3 className="text-sm text-gray-900"> {prod.nombre} </h3>
+                  <h3 className="text-sm text-gray-900 text-left"> {prod.nombre} </h3>
 
-                  <dl className="mt-0.5 space-y-px text-[10px] text-gray-600">
-                    <div>
-                      <dt className="inline">Categoria:</dt>
-                      <dd className="inline"> {prod.categoria} </dd>
+                  <dl className="mt-0.5 space-y-px  text-gray-600 ">
+                    <div className='flex gap-1'>
+                      <dt className="inline text-[12px] font-semilight">Categoria: </dt>
+                      <dd className="inline text-[12px] "> {prod.categoria} </dd>
                     </div>
 
                     
@@ -86,7 +103,7 @@ const Cart = () => {
                     </p>
 
                     <span className='ml-[20px] '>
-                      ${prod.precio * prod.cantidad}
+                      ${prod.precio} c/u
                     </span>
                   </div>
 
@@ -95,11 +112,9 @@ const Cart = () => {
                 </li>
 
           ))}
-
-          
-
           
         </ul>
+        
 
         <div className="mt-8 flex justify-end border-t border-gray-100 pt-8">
           <div className="w-screen max-w-lg space-y-4">
@@ -126,17 +141,12 @@ const Cart = () => {
 
             <div className="flex justify-end gap-2">
             <button
-                onClick={()=> setCart([])}
+                onClick={()=> setCart([]) & carritoVaciado()}
                 className="block rounded bg-red-700 px-4 py-3 text-sm text-gray-100 transition hover:bg-red-600  "
               >
                 Vaciar Carrito
               </button>
-              <a
-                href="#"
-                className="block rounded bg-gray-700 px-5 py-3 text-sm text-gray-100 transition hover:bg-gray-600"
-              >
-                Checkout
-              </a>
+              
             </div>
           </div>
         </div>
@@ -145,7 +155,7 @@ const Cart = () => {
   </div>
 
 
-  <CartForm />
+  <CartForm  />
 </section>
 
          

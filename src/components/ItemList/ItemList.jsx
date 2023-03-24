@@ -12,7 +12,7 @@ const ItemList = ({data }) => {
     <>
 
     <div className='min-h-[80vh] w-full flex justify-center items-center'>
-      <div className="center-div mt-[50px] flex flex-wrap justify-center items-center max-w-[1200px] gap-3" >
+      <div className="center-div mt-[80px] flex flex-wrap justify-center items-center max-w-[1200px] gap-3" >
       
       {data.map((prod)=>(
 

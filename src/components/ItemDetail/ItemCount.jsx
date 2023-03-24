@@ -3,7 +3,11 @@ import { useContext,useState } from 'react'
 import { CartContext } from '../../context/CartContextProvider';
 
 
+import withReactContent from 'sweetalert2-react-content';
+import swal from 'sweetalert2/dist/sweetalert2.all.min.js'
 
+
+const MySwal = withReactContent(swal)
 
 
 
@@ -60,6 +64,17 @@ const ItemCount = ({id, imagen ,nombre,  precio , categoria}) => {
     }    
     
 
+    //ALERTA PRDUCTO AGREGADO
+    const prodAgregado= ()=>{
+      MySwal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Producto agregado!',
+        showConfirmButton: false,
+        timer: 900
+      })
+    }
+
 
   
   return (
@@ -73,7 +88,7 @@ const ItemCount = ({id, imagen ,nombre,  precio , categoria}) => {
 
       <a>
 
-          <div onClick={() => addToCart()  }  className="block text-[14px] rounded-[10px] cursor-pointer  border-[1px] border-[#444] px-5 py-[11px] text-xs font-medium text-[#444] transition duration-200 hover:bg-[#0CC0DF] hover:border-[#0CC0DF] hover:text-white">
+          <div onClick={() => addToCart() & prodAgregado() }  className="block text-[14px] rounded-[10px] cursor-pointer  border-[1px] border-[#444] px-5 py-[11px] text-xs font-medium text-[#444] transition duration-200 hover:bg-[#0CC0DF] hover:border-[#0CC0DF] hover:text-white">
               Añadir 
           </div>
 
